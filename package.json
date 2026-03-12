@@ -1,5 +1,5 @@
 {
-  "name": "ai-studio-applet",
+  "name": "career-path",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -11,16 +11,16 @@
   },
   "dependencies": {
     "@google/genai": "^1.17.0",
-    "@hookform/resolvers": "^5.2.1",
     "autoprefixer": "^10.4.21",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^0.553.0",
-    "motion": "^12.23.24",
     "next": "^15.4.9",
+    "next-auth": "^4.24.13",
     "postcss": "^8.5.6",
     "react": "^19.2.1",
     "react-dom": "^19.2.1",
+    "react-toastify": "^11.0.5",
     "tailwind-merge": "^3.3.1"
   },
   "devDependencies": {
