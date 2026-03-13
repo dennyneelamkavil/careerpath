@@ -1,10 +1,29 @@
-import Image from 'next/image';
-import Link from 'next/link';
-import { 
-  Sparkles, LayoutDashboard, HelpCircle, Route, Library, LineChart, Settings, 
-  Search, Bell, ClipboardList, CheckCircle, Users, Zap, ArrowRight, Code, 
-  Activity, HeartPulse, Palette, Edit2, Brain, Terminal, ChevronRight
-} from 'lucide-react';
+import Image from "next/image";
+import Link from "next/link";
+import {
+  Sparkles,
+  LayoutDashboard,
+  HelpCircle,
+  Route,
+  Library,
+  LineChart,
+  Settings,
+  Search,
+  Bell,
+  ClipboardList,
+  CheckCircle,
+  Users,
+  Zap,
+  ArrowRight,
+  Code,
+  Activity,
+  HeartPulse,
+  Palette,
+  Edit2,
+  Brain,
+  Terminal,
+  ChevronRight,
+} from "lucide-react";
 
 export default function Dashboard() {
   return (
@@ -21,36 +40,58 @@ export default function Dashboard() {
           </div>
         </div>
         <nav className="flex-1 px-4 space-y-1">
-          <Link href="/dashboard" className="flex items-center gap-3 px-3 py-2 bg-primary/10 text-primary rounded-lg font-medium">
+          <Link
+            href="/dashboard"
+            className="flex items-center gap-3 px-3 py-2 bg-primary/10 text-primary rounded-lg font-medium"
+          >
             <LayoutDashboard className="w-5 h-5" />
             <span>Dashboard</span>
           </Link>
-          <Link href="/assessment" className="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors">
+          <Link
+            href="/assessment"
+            className="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors"
+          >
             <HelpCircle className="w-5 h-5" />
             <span>Assessments</span>
           </Link>
-          <Link href="#" className="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors">
+          <Link
+            href="#"
+            className="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors"
+          >
             <Route className="w-5 h-5" />
             <span>Career Path</span>
           </Link>
-          <Link href="/design" className="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors">
+          <Link
+            href="/design"
+            className="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors"
+          >
             <Library className="w-5 h-5" />
             <span>Resources</span>
           </Link>
-          <Link href="#" className="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors">
+          <Link
+            href="#"
+            className="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors"
+          >
             <LineChart className="w-5 h-5" />
             <span>Skill Analysis</span>
           </Link>
         </nav>
         <div className="p-4 mt-auto">
           <div className="p-4 bg-slate-50 dark:bg-slate-800 rounded-xl">
-            <p className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Pro Plan</p>
+            <p className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">
+              Pro Plan
+            </p>
             <p className="text-sm mb-3">Unlock advanced AI recommendations</p>
-            <button className="w-full bg-primary text-white py-2 rounded-lg text-sm font-medium hover:bg-primary/90">Upgrade Now</button>
+            <button className="w-full bg-primary text-white py-2 rounded-lg text-sm font-medium hover:bg-primary/90">
+              Upgrade Now
+            </button>
           </div>
         </div>
         <div className="p-4 border-t border-slate-200 dark:border-slate-800">
-          <Link href="#" className="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors">
+          <Link
+            href="#"
+            className="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors"
+          >
             <Settings className="w-5 h-5" />
             <span>Settings</span>
           </Link>
@@ -62,10 +103,14 @@ export default function Dashboard() {
         {/* Top Bar */}
         <header className="h-16 border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-6 flex items-center justify-between">
           <div className="flex items-center gap-4">
-            <h2 className="text-xl font-bold">Welcome back, Denny 👋</h2>
+            <h2 className="text-xl font-bold">Welcome back, John 👋</h2>
             <div className="hidden md:flex items-center bg-slate-100 dark:bg-slate-800 rounded-lg px-3 py-1.5 w-64">
               <Search className="text-slate-400 w-4 h-4" />
-              <input className="bg-transparent border-none focus:ring-0 text-sm w-full placeholder:text-slate-400 ml-2 outline-none" placeholder="Search assessments..." type="text" />
+              <input
+                className="bg-transparent border-none focus:ring-0 text-sm w-full placeholder:text-slate-400 ml-2 outline-none"
+                placeholder="Search assessments..."
+                type="text"
+              />
             </div>
           </div>
           <div className="flex items-center gap-4">
@@ -75,11 +120,19 @@ export default function Dashboard() {
             </button>
             <div className="flex items-center gap-3 pl-4 border-l border-slate-200 dark:border-slate-800">
               <div className="text-right hidden sm:block">
-                <p className="text-sm font-semibold">Denny Scott</p>
-                <p className="text-xs text-slate-500">Computer Science Student</p>
+                <p className="text-sm font-semibold">John Doe</p>
+                <p className="text-xs text-slate-500">
+                  Computer Science Student
+                </p>
               </div>
               <div className="w-10 h-10 rounded-full bg-slate-200 relative overflow-hidden border-2 border-primary/20">
-                <Image alt="User avatar" fill className="object-cover" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&q=80" referrerPolicy="no-referrer" />
+                <Image
+                  alt="User avatar"
+                  fill
+                  className="object-cover"
+                  src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&q=80"
+                  referrerPolicy="no-referrer"
+                />
               </div>
             </div>
           </div>
@@ -95,7 +148,9 @@ export default function Dashboard() {
                   <ClipboardList className="w-5 h-5" />
                 </div>
               </div>
-              <p className="text-sm text-slate-500 font-medium">Assessments Taken</p>
+              <p className="text-sm text-slate-500 font-medium">
+                Assessments Taken
+              </p>
               <h3 className="text-2xl font-bold mt-1">12</h3>
             </div>
             <div className="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
@@ -104,7 +159,9 @@ export default function Dashboard() {
                   <CheckCircle className="w-5 h-5" />
                 </div>
               </div>
-              <p className="text-sm text-slate-500 font-medium">Completed Tests</p>
+              <p className="text-sm text-slate-500 font-medium">
+                Completed Tests
+              </p>
               <h3 className="text-2xl font-bold mt-1">8</h3>
             </div>
             <div className="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
@@ -113,7 +170,9 @@ export default function Dashboard() {
                   <Users className="w-5 h-5" />
                 </div>
               </div>
-              <p className="text-sm text-slate-500 font-medium">Career Matches</p>
+              <p className="text-sm text-slate-500 font-medium">
+                Career Matches
+              </p>
               <h3 className="text-2xl font-bold mt-1">15</h3>
             </div>
             <div className="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
@@ -138,24 +197,38 @@ export default function Dashboard() {
                     <div className="absolute inset-0 bg-gradient-to-br from-primary to-secondary opacity-20"></div>
                     <div className="absolute inset-0 flex items-center justify-center">
                       <div className="bg-white/90 dark:bg-slate-900/90 p-4 rounded-full shadow-lg">
-                        <span className="text-3xl font-bold text-primary">92%</span>
+                        <span className="text-3xl font-bold text-primary">
+                          92%
+                        </span>
                       </div>
                     </div>
                   </div>
                   <div className="p-6 md:w-2/3 flex flex-col justify-between">
                     <div>
                       <div className="flex justify-between items-start mb-2">
-                        <h4 className="text-xl font-bold">Career Aptitude Test</h4>
-                        <span className="px-2 py-1 bg-green-100 text-green-700 text-xs font-bold rounded">EXCELLENT</span>
+                        <h4 className="text-xl font-bold">
+                          Career Aptitude Test
+                        </h4>
+                        <span className="px-2 py-1 bg-green-100 text-green-700 text-xs font-bold rounded">
+                          EXCELLENT
+                        </span>
                       </div>
-                      <p className="text-slate-500 text-sm mb-4">Completed on Oct 24, 2023. This assessment evaluates your logical reasoning, personality traits, and technical inclinations.</p>
+                      <p className="text-slate-500 text-sm mb-4">
+                        Completed on Oct 24, 2023. This assessment evaluates
+                        your logical reasoning, personality traits, and
+                        technical inclinations.
+                      </p>
                       <div className="grid grid-cols-2 gap-4 mb-6">
                         <div>
-                          <p className="text-xs text-slate-400 uppercase">Score</p>
+                          <p className="text-xs text-slate-400 uppercase">
+                            Score
+                          </p>
                           <p className="font-bold">92/100</p>
                         </div>
                         <div>
-                          <p className="text-xs text-slate-400 uppercase">Duration</p>
+                          <p className="text-xs text-slate-400 uppercase">
+                            Duration
+                          </p>
                           <p className="font-bold">45 Mins</p>
                         </div>
                       </div>
@@ -171,8 +244,15 @@ export default function Dashboard() {
               {/* Career Recommendations */}
               <section>
                 <div className="flex items-center justify-between mb-4">
-                  <h3 className="text-lg font-bold">Recommended Career Paths</h3>
-                  <a className="text-sm text-primary font-semibold hover:underline" href="#">View All</a>
+                  <h3 className="text-lg font-bold">
+                    Recommended Career Paths
+                  </h3>
+                  <a
+                    className="text-sm text-primary font-semibold hover:underline"
+                    href="#"
+                  >
+                    View All
+                  </a>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="bg-white dark:bg-slate-900 p-5 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm hover:border-primary/50 transition-all group">
@@ -180,44 +260,76 @@ export default function Dashboard() {
                       <div className="p-2 bg-indigo-50 dark:bg-indigo-900/30 text-indigo-600 rounded-lg">
                         <Code className="w-5 h-5" />
                       </div>
-                      <span className="text-sm font-bold text-primary">98% Match</span>
+                      <span className="text-sm font-bold text-primary">
+                        98% Match
+                      </span>
                     </div>
-                    <h4 className="font-bold text-lg mb-1">Software Developer</h4>
-                    <p className="text-sm text-slate-500 mb-4 line-clamp-2">Design, build and maintain complex software systems using modern frameworks.</p>
-                    <button className="w-full py-2 border border-slate-200 dark:border-slate-700 rounded-lg text-sm font-medium group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all">Explore Career</button>
+                    <h4 className="font-bold text-lg mb-1">
+                      Software Developer
+                    </h4>
+                    <p className="text-sm text-slate-500 mb-4 line-clamp-2">
+                      Design, build and maintain complex software systems using
+                      modern frameworks.
+                    </p>
+                    <button className="w-full py-2 border border-slate-200 dark:border-slate-700 rounded-lg text-sm font-medium group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all">
+                      Explore Career
+                    </button>
                   </div>
                   <div className="bg-white dark:bg-slate-900 p-5 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm hover:border-primary/50 transition-all group">
                     <div className="flex items-center justify-between mb-3">
                       <div className="p-2 bg-blue-50 dark:bg-blue-900/30 text-blue-600 rounded-lg">
                         <Activity className="w-5 h-5" />
                       </div>
-                      <span className="text-sm font-bold text-primary">92% Match</span>
+                      <span className="text-sm font-bold text-primary">
+                        92% Match
+                      </span>
                     </div>
                     <h4 className="font-bold text-lg mb-1">Data Analyst</h4>
-                    <p className="text-sm text-slate-500 mb-4 line-clamp-2">Analyze large datasets to help businesses make data-driven decisions.</p>
-                    <button className="w-full py-2 border border-slate-200 dark:border-slate-700 rounded-lg text-sm font-medium group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all">Explore Career</button>
+                    <p className="text-sm text-slate-500 mb-4 line-clamp-2">
+                      Analyze large datasets to help businesses make data-driven
+                      decisions.
+                    </p>
+                    <button className="w-full py-2 border border-slate-200 dark:border-slate-700 rounded-lg text-sm font-medium group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all">
+                      Explore Career
+                    </button>
                   </div>
                   <div className="bg-white dark:bg-slate-900 p-5 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm hover:border-primary/50 transition-all group">
                     <div className="flex items-center justify-between mb-3">
                       <div className="p-2 bg-red-50 dark:bg-red-900/30 text-red-600 rounded-lg">
                         <HeartPulse className="w-5 h-5" />
                       </div>
-                      <span className="text-sm font-bold text-primary">75% Match</span>
+                      <span className="text-sm font-bold text-primary">
+                        75% Match
+                      </span>
                     </div>
-                    <h4 className="font-bold text-lg mb-1">Health Informatics</h4>
-                    <p className="text-sm text-slate-500 mb-4 line-clamp-2">Bridge the gap between technology and patient care in modern hospitals.</p>
-                    <button className="w-full py-2 border border-slate-200 dark:border-slate-700 rounded-lg text-sm font-medium group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all">Explore Career</button>
+                    <h4 className="font-bold text-lg mb-1">
+                      Health Informatics
+                    </h4>
+                    <p className="text-sm text-slate-500 mb-4 line-clamp-2">
+                      Bridge the gap between technology and patient care in
+                      modern hospitals.
+                    </p>
+                    <button className="w-full py-2 border border-slate-200 dark:border-slate-700 rounded-lg text-sm font-medium group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all">
+                      Explore Career
+                    </button>
                   </div>
                   <div className="bg-white dark:bg-slate-900 p-5 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm hover:border-primary/50 transition-all group">
                     <div className="flex items-center justify-between mb-3">
                       <div className="p-2 bg-pink-50 dark:bg-pink-900/30 text-pink-600 rounded-lg">
                         <Palette className="w-5 h-5" />
                       </div>
-                      <span className="text-sm font-bold text-primary">68% Match</span>
+                      <span className="text-sm font-bold text-primary">
+                        68% Match
+                      </span>
                     </div>
                     <h4 className="font-bold text-lg mb-1">UX Designer</h4>
-                    <p className="text-sm text-slate-500 mb-4 line-clamp-2">Create user-centric interfaces and meaningful experiences for digital products.</p>
-                    <button className="w-full py-2 border border-slate-200 dark:border-slate-700 rounded-lg text-sm font-medium group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all">Explore Career</button>
+                    <p className="text-sm text-slate-500 mb-4 line-clamp-2">
+                      Create user-centric interfaces and meaningful experiences
+                      for digital products.
+                    </p>
+                    <button className="w-full py-2 border border-slate-200 dark:border-slate-700 rounded-lg text-sm font-medium group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all">
+                      Explore Career
+                    </button>
                   </div>
                 </div>
               </section>
@@ -236,29 +348,51 @@ export default function Dashboard() {
                 <div className="text-center mb-6">
                   <div className="relative inline-block">
                     <div className="w-20 h-20 rounded-full mx-auto mb-3 bg-slate-100 border-2 border-white dark:border-slate-800 shadow-md relative overflow-hidden">
-                      <Image alt="Profile picture" fill className="object-cover" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&q=80" referrerPolicy="no-referrer" />
+                      <Image
+                        alt="Profile picture"
+                        fill
+                        className="object-cover"
+                        src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&q=80"
+                        referrerPolicy="no-referrer"
+                      />
                     </div>
                     <span className="absolute bottom-3 right-0 w-4 h-4 bg-green-500 border-2 border-white dark:border-slate-800 rounded-full"></span>
                   </div>
-                  <h4 className="font-bold text-lg">Denny Scott</h4>
-                  <p className="text-sm text-slate-500">denny.scott@example.com</p>
+                  <h4 className="font-bold text-lg">John Doe</h4>
+                  <p className="text-sm text-slate-500">john.doe@example.com</p>
                 </div>
                 <div className="space-y-4 pt-4 border-t border-slate-100 dark:border-slate-800">
                   <div>
-                    <p className="text-xs text-slate-400 uppercase font-semibold">Education</p>
-                    <p className="text-sm font-medium">BS in Computer Science</p>
-                    <p className="text-xs text-slate-500">Global Tech University (Year 3)</p>
+                    <p className="text-xs text-slate-400 uppercase font-semibold">
+                      Education
+                    </p>
+                    <p className="text-sm font-medium">
+                      BS in Computer Science
+                    </p>
+                    <p className="text-xs text-slate-500">
+                      Global Tech University (Year 3)
+                    </p>
                   </div>
                   <div>
-                    <p className="text-xs text-slate-400 uppercase font-semibold">Location</p>
+                    <p className="text-xs text-slate-400 uppercase font-semibold">
+                      Location
+                    </p>
                     <p className="text-sm font-medium">San Francisco, CA</p>
                   </div>
                   <div>
-                    <p className="text-xs text-slate-400 uppercase font-semibold">Interests</p>
+                    <p className="text-xs text-slate-400 uppercase font-semibold">
+                      Interests
+                    </p>
                     <div className="flex flex-wrap gap-2 mt-2">
-                      <span className="px-2 py-1 bg-slate-100 dark:bg-slate-800 rounded text-xs">AI/ML</span>
-                      <span className="px-2 py-1 bg-slate-100 dark:bg-slate-800 rounded text-xs">Sustainability</span>
-                      <span className="px-2 py-1 bg-slate-100 dark:bg-slate-800 rounded text-xs">Gaming</span>
+                      <span className="px-2 py-1 bg-slate-100 dark:bg-slate-800 rounded text-xs">
+                        AI/ML
+                      </span>
+                      <span className="px-2 py-1 bg-slate-100 dark:bg-slate-800 rounded text-xs">
+                        Sustainability
+                      </span>
+                      <span className="px-2 py-1 bg-slate-100 dark:bg-slate-800 rounded text-xs">
+                        Gaming
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -274,7 +408,10 @@ export default function Dashboard() {
                       <span className="text-slate-500">90%</span>
                     </div>
                     <div className="w-full bg-slate-100 dark:bg-slate-800 rounded-full h-2">
-                      <div className="bg-primary h-2 rounded-full" style={{ width: '90%' }}></div>
+                      <div
+                        className="bg-primary h-2 rounded-full"
+                        style={{ width: "90%" }}
+                      ></div>
                     </div>
                   </div>
                   <div>
@@ -283,7 +420,10 @@ export default function Dashboard() {
                       <span className="text-slate-500">85%</span>
                     </div>
                     <div className="w-full bg-slate-100 dark:bg-slate-800 rounded-full h-2">
-                      <div className="bg-primary h-2 rounded-full" style={{ width: '85%' }}></div>
+                      <div
+                        className="bg-primary h-2 rounded-full"
+                        style={{ width: "85%" }}
+                      ></div>
                     </div>
                   </div>
                   <div>
@@ -292,7 +432,10 @@ export default function Dashboard() {
                       <span className="text-slate-500">72%</span>
                     </div>
                     <div className="w-full bg-slate-100 dark:bg-slate-800 rounded-full h-2">
-                      <div className="bg-secondary h-2 rounded-full" style={{ width: '72%' }}></div>
+                      <div
+                        className="bg-secondary h-2 rounded-full"
+                        style={{ width: "72%" }}
+                      ></div>
                     </div>
                   </div>
                   <div>
@@ -301,7 +444,10 @@ export default function Dashboard() {
                       <span className="text-slate-500">65%</span>
                     </div>
                     <div className="w-full bg-slate-100 dark:bg-slate-800 rounded-full h-2">
-                      <div className="bg-secondary h-2 rounded-full" style={{ width: '65%' }}></div>
+                      <div
+                        className="bg-secondary h-2 rounded-full"
+                        style={{ width: "65%" }}
+                      ></div>
                     </div>
                   </div>
                   <div>
@@ -310,7 +456,10 @@ export default function Dashboard() {
                       <span className="text-slate-500">58%</span>
                     </div>
                     <div className="w-full bg-slate-100 dark:bg-slate-800 rounded-full h-2">
-                      <div className="bg-slate-300 dark:bg-slate-600 h-2 rounded-full" style={{ width: '58%' }}></div>
+                      <div
+                        className="bg-slate-300 dark:bg-slate-600 h-2 rounded-full"
+                        style={{ width: "58%" }}
+                      ></div>
                     </div>
                   </div>
                 </div>
@@ -325,7 +474,9 @@ export default function Dashboard() {
                       <Brain className="w-4 h-4" />
                     </div>
                     <div className="flex-1 min-w-0">
-                      <p className="text-sm font-semibold truncate">Soft Skills Evaluation</p>
+                      <p className="text-sm font-semibold truncate">
+                        Soft Skills Evaluation
+                      </p>
                       <p className="text-xs text-slate-500">Due in 2 days</p>
                     </div>
                     <ChevronRight className="w-4 h-4 text-slate-400" />
@@ -335,7 +486,9 @@ export default function Dashboard() {
                       <Terminal className="w-4 h-4" />
                     </div>
                     <div className="flex-1 min-w-0">
-                      <p className="text-sm font-semibold truncate">Python Proficiency</p>
+                      <p className="text-sm font-semibold truncate">
+                        Python Proficiency
+                      </p>
                       <p className="text-xs text-slate-500">Due in 5 days</p>
                     </div>
                     <ChevronRight className="w-4 h-4 text-slate-400" />

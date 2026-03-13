@@ -29,7 +29,7 @@ export default function Loader() {
         {/* Logo */}
         <Image
           src="/logo.png"
-          alt="Surprez Logo"
+          alt="CareerPath Logo"
           fill
           className="object-contain p-4"
         />
