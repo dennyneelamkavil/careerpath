@@ -1,5 +1,5 @@
 import "server-only";
-import { Schema, model, models, Types } from "mongoose";
+import { Schema, model, models } from "mongoose";
 
 const RoleSchema = new Schema(
   {
@@ -19,7 +19,7 @@ const RoleSchema = new Schema(
       default: false,
     },
   },
-  { timestamps: true }
+  { timestamps: true },
 );
 
 export const RoleModel = models.Role || model("Role", RoleSchema);

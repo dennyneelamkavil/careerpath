@@ -39,7 +39,7 @@ const UserSchema = new Schema(
       default: true,
     },
   },
-  { timestamps: true }
+  { timestamps: true },
 );
 
 UserSchema.index({ username: 1, isActive: 1 });
