@@ -30,6 +30,13 @@ const ResultSchema = new Schema(
     },
 
     hollandCode: String,
+
+    careers: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "Career",
+      },
+    ],
   },
   { timestamps: true },
 );
