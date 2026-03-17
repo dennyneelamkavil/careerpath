@@ -1,0 +1,667 @@
+[
+  {
+    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "question": "I enjoy building or assembling physical objects",
+    "order": 1,
+    "options": [
+      { "text": "Strongly Agree", "riasec": { "R": 3, "I": 1 } },
+      { "text": "Agree", "riasec": { "R": 2, "I": 1 } },
+      { "text": "Neutral", "riasec": { "R": 1 } },
+      { "text": "Disagree", "riasec": { "R": 0 } }
+    ]
+  },
+  {
+    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "question": "I like repairing machines or devices",
+    "order": 2,
+    "options": [
+      { "text": "Strongly Agree", "riasec": { "R": 3, "I": 1 } },
+      { "text": "Agree", "riasec": { "R": 2 } },
+      { "text": "Neutral", "riasec": { "R": 1 } },
+      { "text": "Disagree", "riasec": { "R": 0 } }
+    ]
+  },
+  {
+    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "question": "I prefer working outdoors rather than in an office",
+    "order": 3,
+    "options": [
+      { "text": "Strongly Agree", "riasec": { "R": 3, "A": 1 } },
+      { "text": "Agree", "riasec": { "R": 2 } },
+      { "text": "Neutral", "riasec": { "R": 1 } },
+      { "text": "Disagree", "riasec": { "R": 0 } }
+    ]
+  },
+  {
+    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "question": "I enjoy hands-on activities more than theoretical work",
+    "order": 4,
+    "options": [
+      { "text": "Strongly Agree", "riasec": { "R": 3, "C": 1 } },
+      { "text": "Agree", "riasec": { "R": 2 } },
+      { "text": "Neutral", "riasec": { "R": 1 } },
+      { "text": "Disagree", "riasec": { "R": 0 } }
+    ]
+  },
+  {
+    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "question": "I like working with tools and equipment",
+    "order": 5,
+    "options": [
+      { "text": "Strongly Agree", "riasec": { "R": 3 } },
+      { "text": "Agree", "riasec": { "R": 2 } },
+      { "text": "Neutral", "riasec": { "R": 1 } },
+      { "text": "Disagree", "riasec": { "R": 0 } }
+    ]
+  },
+  {
+    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "question": "I enjoy physical or manual tasks",
+    "order": 6,
+    "options": [
+      { "text": "Strongly Agree", "riasec": { "R": 3 } },
+      { "text": "Agree", "riasec": { "R": 2 } },
+      { "text": "Neutral", "riasec": { "R": 1 } },
+      { "text": "Disagree", "riasec": { "R": 0 } }
+    ]
+  },
+  {
+    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "question": "I like working with vehicles or engines",
+    "order": 7,
+    "options": [
+      { "text": "Strongly Agree", "riasec": { "R": 3, "I": 1 } },
+      { "text": "Agree", "riasec": { "R": 2 } },
+      { "text": "Neutral", "riasec": { "R": 1 } },
+      { "text": "Disagree", "riasec": { "R": 0 } }
+    ]
+  },
+  {
+    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "question": "I prefer practical tasks over abstract thinking",
+    "order": 8,
+    "options": [
+      { "text": "Strongly Agree", "riasec": { "R": 3, "C": 1 } },
+      { "text": "Agree", "riasec": { "R": 2 } },
+      { "text": "Neutral", "riasec": { "R": 1 } },
+      { "text": "Disagree", "riasec": { "R": 0 } }
+    ]
+  },
+  {
+    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "question": "I enjoy working with my hands to create things",
+    "order": 9,
+    "options": [
+      { "text": "Strongly Agree", "riasec": { "R": 3, "A": 1 } },
+      { "text": "Agree", "riasec": { "R": 2 } },
+      { "text": "Neutral", "riasec": { "R": 1 } },
+      { "text": "Disagree", "riasec": { "R": 0 } }
+    ]
+  },
+  {
+    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "question": "I enjoy technical hands-on problem solving",
+    "order": 10,
+    "options": [
+      { "text": "Strongly Agree", "riasec": { "R": 2, "I": 2 } },
+      { "text": "Agree", "riasec": { "R": 2, "I": 1 } },
+      { "text": "Neutral", "riasec": { "R": 1 } },
+      { "text": "Disagree", "riasec": { "R": 0 } }
+    ]
+  },
+
+  {
+    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "question": "I enjoy analyzing data to find patterns",
+    "order": 11,
+    "options": [
+      { "text": "Strongly Agree", "riasec": { "I": 3, "C": 1 } },
+      { "text": "Agree", "riasec": { "I": 2 } },
+      { "text": "Neutral", "riasec": { "I": 1 } },
+      { "text": "Disagree", "riasec": { "I": 0 } }
+    ]
+  },
+  {
+    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "question": "I like solving complex logical problems",
+    "order": 12,
+    "options": [
+      { "text": "Strongly Agree", "riasec": { "I": 3 } },
+      { "text": "Agree", "riasec": { "I": 2 } },
+      { "text": "Neutral", "riasec": { "I": 1 } },
+      { "text": "Disagree", "riasec": { "I": 0 } }
+    ]
+  },
+  {
+    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "question": "I enjoy scientific research or experiments",
+    "order": 13,
+    "options": [
+      { "text": "Strongly Agree", "riasec": { "I": 3 } },
+      { "text": "Agree", "riasec": { "I": 2 } },
+      { "text": "Neutral", "riasec": { "I": 1 } },
+      { "text": "Disagree", "riasec": { "I": 0 } }
+    ]
+  },
+  {
+    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "question": "I enjoy learning new theories and concepts",
+    "order": 14,
+    "options": [
+      { "text": "Strongly Agree", "riasec": { "I": 3, "A": 1 } },
+      { "text": "Agree", "riasec": { "I": 2 } },
+      { "text": "Neutral", "riasec": { "I": 1 } },
+      { "text": "Disagree", "riasec": { "I": 0 } }
+    ]
+  },
+  {
+    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "question": "I enjoy working with numbers and statistics",
+    "order": 15,
+    "options": [
+      { "text": "Strongly Agree", "riasec": { "I": 2, "C": 2 } },
+      { "text": "Agree", "riasec": { "I": 2, "C": 1 } },
+      { "text": "Neutral", "riasec": { "I": 1 } },
+      { "text": "Disagree", "riasec": { "I": 0 } }
+    ]
+  },
+  {
+    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "question": "I like solving puzzles or brain teasers",
+    "order": 16,
+    "options": [
+      { "text": "Strongly Agree", "riasec": { "I": 3 } },
+      { "text": "Agree", "riasec": { "I": 2 } },
+      { "text": "Neutral", "riasec": { "I": 1 } },
+      { "text": "Disagree", "riasec": { "I": 0 } }
+    ]
+  },
+  {
+    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "question": "I enjoy working independently on intellectual tasks",
+    "order": 17,
+    "options": [
+      { "text": "Strongly Agree", "riasec": { "I": 2, "A": 1 } },
+      { "text": "Agree", "riasec": { "I": 2 } },
+      { "text": "Neutral", "riasec": { "I": 1 } },
+      { "text": "Disagree", "riasec": { "I": 0 } }
+    ]
+  },
+  {
+    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "question": "I enjoy analyzing how things work",
+    "order": 18,
+    "options": [
+      { "text": "Strongly Agree", "riasec": { "I": 2, "R": 1 } },
+      { "text": "Agree", "riasec": { "I": 2 } },
+      { "text": "Neutral", "riasec": { "I": 1 } },
+      { "text": "Disagree", "riasec": { "I": 0 } }
+    ]
+  },
+  {
+    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "question": "I enjoy researching topics deeply",
+    "order": 19,
+    "options": [
+      { "text": "Strongly Agree", "riasec": { "I": 3 } },
+      { "text": "Agree", "riasec": { "I": 2 } },
+      { "text": "Neutral", "riasec": { "I": 1 } },
+      { "text": "Disagree", "riasec": { "I": 0 } }
+    ]
+  },
+  {
+    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "question": "I like working on challenging intellectual problems",
+    "order": 20,
+    "options": [
+      { "text": "Strongly Agree", "riasec": { "I": 3 } },
+      { "text": "Agree", "riasec": { "I": 2 } },
+      { "text": "Neutral", "riasec": { "I": 1 } },
+      { "text": "Disagree", "riasec": { "I": 0 } }
+    ]
+  },
+
+  {
+    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "question": "I enjoy creating art, music, or designs",
+    "order": 21,
+    "options": [
+      { "text": "Strongly Agree", "riasec": { "A": 3 } },
+      { "text": "Agree", "riasec": { "A": 2 } },
+      { "text": "Neutral", "riasec": { "A": 1 } },
+      { "text": "Disagree", "riasec": { "A": 0 } }
+    ]
+  },
+  {
+    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "question": "I like expressing ideas creatively",
+    "order": 22,
+    "options": [
+      { "text": "Strongly Agree", "riasec": { "A": 3 } },
+      { "text": "Agree", "riasec": { "A": 2 } },
+      { "text": "Neutral", "riasec": { "A": 1 } },
+      { "text": "Disagree", "riasec": { "A": 0 } }
+    ]
+  },
+  {
+    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "question": "I enjoy writing stories or poetry",
+    "order": 23,
+    "options": [
+      { "text": "Strongly Agree", "riasec": { "A": 3, "S": 1 } },
+      { "text": "Agree", "riasec": { "A": 2 } },
+      { "text": "Neutral", "riasec": { "A": 1 } },
+      { "text": "Disagree", "riasec": { "A": 0 } }
+    ]
+  },
+  {
+    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "question": "I enjoy thinking outside the box",
+    "order": 24,
+    "options": [
+      { "text": "Strongly Agree", "riasec": { "A": 3 } },
+      { "text": "Agree", "riasec": { "A": 2 } },
+      { "text": "Neutral", "riasec": { "A": 1 } },
+      { "text": "Disagree", "riasec": { "A": 0 } }
+    ]
+  },
+  {
+    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "question": "I enjoy designing visuals or layouts",
+    "order": 25,
+    "options": [
+      { "text": "Strongly Agree", "riasec": { "A": 3 } },
+      { "text": "Agree", "riasec": { "A": 2 } },
+      { "text": "Neutral", "riasec": { "A": 1 } },
+      { "text": "Disagree", "riasec": { "A": 0 } }
+    ]
+  },
+  {
+    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "question": "I enjoy performing or presenting creatively",
+    "order": 26,
+    "options": [
+      { "text": "Strongly Agree", "riasec": { "A": 2, "E": 1 } },
+      { "text": "Agree", "riasec": { "A": 2 } },
+      { "text": "Neutral", "riasec": { "A": 1 } },
+      { "text": "Disagree", "riasec": { "A": 0 } }
+    ]
+  },
+  {
+    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "question": "I like experimenting with new ideas",
+    "order": 27,
+    "options": [
+      { "text": "Strongly Agree", "riasec": { "A": 2, "I": 1 } },
+      { "text": "Agree", "riasec": { "A": 2 } },
+      { "text": "Neutral", "riasec": { "A": 1 } },
+      { "text": "Disagree", "riasec": { "A": 0 } }
+    ]
+  },
+  {
+    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "question": "I enjoy creative problem solving",
+    "order": 28,
+    "options": [
+      { "text": "Strongly Agree", "riasec": { "A": 2, "I": 1 } },
+      { "text": "Agree", "riasec": { "A": 2 } },
+      { "text": "Neutral", "riasec": { "A": 1 } },
+      { "text": "Disagree", "riasec": { "A": 0 } }
+    ]
+  },
+  {
+    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "question": "I like working in unstructured environments",
+    "order": 29,
+    "options": [
+      { "text": "Strongly Agree", "riasec": { "A": 2, "E": 1 } },
+      { "text": "Agree", "riasec": { "A": 2 } },
+      { "text": "Neutral", "riasec": { "A": 1 } },
+      { "text": "Disagree", "riasec": { "A": 0 } }
+    ]
+  },
+  {
+    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "question": "I enjoy visual storytelling",
+    "order": 30,
+    "options": [
+      { "text": "Strongly Agree", "riasec": { "A": 3 } },
+      { "text": "Agree", "riasec": { "A": 2 } },
+      { "text": "Neutral", "riasec": { "A": 1 } },
+      { "text": "Disagree", "riasec": { "A": 0 } }
+    ]
+  },
+
+  {
+    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "question": "I enjoy helping others solve personal problems",
+    "order": 31,
+    "options": [
+      { "text": "Strongly Agree", "riasec": { "S": 3 } },
+      { "text": "Agree", "riasec": { "S": 2 } },
+      { "text": "Neutral", "riasec": { "S": 1 } },
+      { "text": "Disagree", "riasec": { "S": 0 } }
+    ]
+  },
+  {
+    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "question": "I enjoy teaching or mentoring people",
+    "order": 32,
+    "options": [
+      { "text": "Strongly Agree", "riasec": { "S": 3 } },
+      { "text": "Agree", "riasec": { "S": 2 } },
+      { "text": "Neutral", "riasec": { "S": 1 } },
+      { "text": "Disagree", "riasec": { "S": 0 } }
+    ]
+  },
+  {
+    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "question": "I enjoy working in teams",
+    "order": 33,
+    "options": [
+      { "text": "Strongly Agree", "riasec": { "S": 2, "E": 1 } },
+      { "text": "Agree", "riasec": { "S": 2 } },
+      { "text": "Neutral", "riasec": { "S": 1 } },
+      { "text": "Disagree", "riasec": { "S": 0 } }
+    ]
+  },
+  {
+    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "question": "I enjoy listening to people's concerns",
+    "order": 34,
+    "options": [
+      { "text": "Strongly Agree", "riasec": { "S": 3 } },
+      { "text": "Agree", "riasec": { "S": 2 } },
+      { "text": "Neutral", "riasec": { "S": 1 } },
+      { "text": "Disagree", "riasec": { "S": 0 } }
+    ]
+  },
+  {
+    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "question": "I enjoy volunteering or community work",
+    "order": 35,
+    "options": [
+      { "text": "Strongly Agree", "riasec": { "S": 3 } },
+      { "text": "Agree", "riasec": { "S": 2 } },
+      { "text": "Neutral", "riasec": { "S": 1 } },
+      { "text": "Disagree", "riasec": { "S": 0 } }
+    ]
+  },
+  {
+    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "question": "I like working in people-focused roles",
+    "order": 36,
+    "options": [
+      { "text": "Strongly Agree", "riasec": { "S": 3 } },
+      { "text": "Agree", "riasec": { "S": 2 } },
+      { "text": "Neutral", "riasec": { "S": 1 } },
+      { "text": "Disagree", "riasec": { "S": 0 } }
+    ]
+  },
+  {
+    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "question": "I enjoy guiding others in decision making",
+    "order": 37,
+    "options": [
+      { "text": "Strongly Agree", "riasec": { "S": 2, "E": 1 } },
+      { "text": "Agree", "riasec": { "S": 2 } },
+      { "text": "Neutral", "riasec": { "S": 1 } },
+      { "text": "Disagree", "riasec": { "S": 0 } }
+    ]
+  },
+  {
+    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "question": "I enjoy building relationships with others",
+    "order": 38,
+    "options": [
+      { "text": "Strongly Agree", "riasec": { "S": 2, "E": 1 } },
+      { "text": "Agree", "riasec": { "S": 2 } },
+      { "text": "Neutral", "riasec": { "S": 1 } },
+      { "text": "Disagree", "riasec": { "S": 0 } }
+    ]
+  },
+  {
+    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "question": "I like supporting others emotionally",
+    "order": 39,
+    "options": [
+      { "text": "Strongly Agree", "riasec": { "S": 3 } },
+      { "text": "Agree", "riasec": { "S": 2 } },
+      { "text": "Neutral", "riasec": { "S": 1 } },
+      { "text": "Disagree", "riasec": { "S": 0 } }
+    ]
+  },
+  {
+    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "question": "I enjoy facilitating group discussions",
+    "order": 40,
+    "options": [
+      { "text": "Strongly Agree", "riasec": { "S": 2, "E": 1 } },
+      { "text": "Agree", "riasec": { "S": 2 } },
+      { "text": "Neutral", "riasec": { "S": 1 } },
+      { "text": "Disagree", "riasec": { "S": 0 } }
+    ]
+  },
+
+  {
+    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "question": "I enjoy leading teams or projects",
+    "order": 41,
+    "options": [
+      { "text": "Strongly Agree", "riasec": { "E": 3 } },
+      { "text": "Agree", "riasec": { "E": 2 } },
+      { "text": "Neutral", "riasec": { "E": 1 } },
+      { "text": "Disagree", "riasec": { "E": 0 } }
+    ]
+  },
+  {
+    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "question": "I like persuading people to accept my ideas",
+    "order": 42,
+    "options": [
+      { "text": "Strongly Agree", "riasec": { "E": 3 } },
+      { "text": "Agree", "riasec": { "E": 2 } },
+      { "text": "Neutral", "riasec": { "E": 1 } },
+      { "text": "Disagree", "riasec": { "E": 0 } }
+    ]
+  },
+  {
+    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "question": "I enjoy taking initiative in group settings",
+    "order": 43,
+    "options": [
+      { "text": "Strongly Agree", "riasec": { "E": 2, "S": 1 } },
+      { "text": "Agree", "riasec": { "E": 2 } },
+      { "text": "Neutral", "riasec": { "E": 1 } },
+      { "text": "Disagree", "riasec": { "E": 0 } }
+    ]
+  },
+  {
+    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "question": "I enjoy making business decisions",
+    "order": 44,
+    "options": [
+      { "text": "Strongly Agree", "riasec": { "E": 3, "C": 1 } },
+      { "text": "Agree", "riasec": { "E": 2 } },
+      { "text": "Neutral", "riasec": { "E": 1 } },
+      { "text": "Disagree", "riasec": { "E": 0 } }
+    ]
+  },
+  {
+    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "question": "I like negotiating or debating",
+    "order": 45,
+    "options": [
+      { "text": "Strongly Agree", "riasec": { "E": 3 } },
+      { "text": "Agree", "riasec": { "E": 2 } },
+      { "text": "Neutral", "riasec": { "E": 1 } },
+      { "text": "Disagree", "riasec": { "E": 0 } }
+    ]
+  },
+  {
+    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "question": "I enjoy setting and achieving goals",
+    "order": 46,
+    "options": [
+      { "text": "Strongly Agree", "riasec": { "E": 2, "C": 1 } },
+      { "text": "Agree", "riasec": { "E": 2 } },
+      { "text": "Neutral", "riasec": { "E": 1 } },
+      { "text": "Disagree", "riasec": { "E": 0 } }
+    ]
+  },
+  {
+    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "question": "I like taking risks in projects",
+    "order": 47,
+    "options": [
+      { "text": "Strongly Agree", "riasec": { "E": 3 } },
+      { "text": "Agree", "riasec": { "E": 2 } },
+      { "text": "Neutral", "riasec": { "E": 1 } },
+      { "text": "Disagree", "riasec": { "E": 0 } }
+    ]
+  },
+  {
+    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "question": "I enjoy motivating others to achieve goals",
+    "order": 48,
+    "options": [
+      { "text": "Strongly Agree", "riasec": { "E": 2, "S": 1 } },
+      { "text": "Agree", "riasec": { "E": 2 } },
+      { "text": "Neutral", "riasec": { "E": 1 } },
+      { "text": "Disagree", "riasec": { "E": 0 } }
+    ]
+  },
+  {
+    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "question": "I like being in positions of authority",
+    "order": 49,
+    "options": [
+      { "text": "Strongly Agree", "riasec": { "E": 3 } },
+      { "text": "Agree", "riasec": { "E": 2 } },
+      { "text": "Neutral", "riasec": { "E": 1 } },
+      { "text": "Disagree", "riasec": { "E": 0 } }
+    ]
+  },
+  {
+    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "question": "I enjoy influencing people’s decisions",
+    "order": 50,
+    "options": [
+      { "text": "Strongly Agree", "riasec": { "E": 3 } },
+      { "text": "Agree", "riasec": { "E": 2 } },
+      { "text": "Neutral", "riasec": { "E": 1 } },
+      { "text": "Disagree", "riasec": { "E": 0 } }
+    ]
+  },
+
+  {
+    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "question": "I like organizing files and records",
+    "order": 51,
+    "options": [
+      { "text": "Strongly Agree", "riasec": { "C": 3 } },
+      { "text": "Agree", "riasec": { "C": 2 } },
+      { "text": "Neutral", "riasec": { "C": 1 } },
+      { "text": "Disagree", "riasec": { "C": 0 } }
+    ]
+  },
+  {
+    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "question": "I enjoy working with structured systems",
+    "order": 52,
+    "options": [
+      { "text": "Strongly Agree", "riasec": { "C": 3 } },
+      { "text": "Agree", "riasec": { "C": 2 } },
+      { "text": "Neutral", "riasec": { "C": 1 } },
+      { "text": "Disagree", "riasec": { "C": 0 } }
+    ]
+  },
+  {
+    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "question": "I prefer clear rules and procedures",
+    "order": 53,
+    "options": [
+      { "text": "Strongly Agree", "riasec": { "C": 3 } },
+      { "text": "Agree", "riasec": { "C": 2 } },
+      { "text": "Neutral", "riasec": { "C": 1 } },
+      { "text": "Disagree", "riasec": { "C": 0 } }
+    ]
+  },
+  {
+    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "question": "I enjoy working with numbers and data entry",
+    "order": 54,
+    "options": [
+      { "text": "Strongly Agree", "riasec": { "C": 2, "I": 1 } },
+      { "text": "Agree", "riasec": { "C": 2 } },
+      { "text": "Neutral", "riasec": { "C": 1 } },
+      { "text": "Disagree", "riasec": { "C": 0 } }
+    ]
+  },
+  {
+    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "question": "I like following established processes",
+    "order": 55,
+    "options": [
+      { "text": "Strongly Agree", "riasec": { "C": 3 } },
+      { "text": "Agree", "riasec": { "C": 2 } },
+      { "text": "Neutral", "riasec": { "C": 1 } },
+      { "text": "Disagree", "riasec": { "C": 0 } }
+    ]
+  },
+  {
+    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "question": "I enjoy organizing schedules and plans",
+    "order": 56,
+    "options": [
+      { "text": "Strongly Agree", "riasec": { "C": 2, "E": 1 } },
+      { "text": "Agree", "riasec": { "C": 2 } },
+      { "text": "Neutral", "riasec": { "C": 1 } },
+      { "text": "Disagree", "riasec": { "C": 0 } }
+    ]
+  },
+  {
+    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "question": "I prefer accuracy over creativity",
+    "order": 57,
+    "options": [
+      { "text": "Strongly Agree", "riasec": { "C": 3 } },
+      { "text": "Agree", "riasec": { "C": 2 } },
+      { "text": "Neutral", "riasec": { "C": 1 } },
+      { "text": "Disagree", "riasec": { "C": 0 } }
+    ]
+  },
+  {
+    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "question": "I enjoy detailed and repetitive tasks",
+    "order": 58,
+    "options": [
+      { "text": "Strongly Agree", "riasec": { "C": 3 } },
+      { "text": "Agree", "riasec": { "C": 2 } },
+      { "text": "Neutral", "riasec": { "C": 1 } },
+      { "text": "Disagree", "riasec": { "C": 0 } }
+    ]
+  },
+  {
+    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "question": "I like maintaining organized systems",
+    "order": 59,
+    "options": [
+      { "text": "Strongly Agree", "riasec": { "C": 3 } },
+      { "text": "Agree", "riasec": { "C": 2 } },
+      { "text": "Neutral", "riasec": { "C": 1 } },
+      { "text": "Disagree", "riasec": { "C": 0 } }
+    ]
+  },
+  {
+    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "question": "I prefer working with structured information",
+    "order": 60,
+    "options": [
+      { "text": "Strongly Agree", "riasec": { "C": 3 } },
+      { "text": "Agree", "riasec": { "C": 2 } },
+      { "text": "Neutral", "riasec": { "C": 1 } },
+      { "text": "Disagree", "riasec": { "C": 0 } }
+    ]
+  }
+]
