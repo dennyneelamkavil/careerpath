@@ -8,16 +8,14 @@ const OptionSchema = new Schema(
       required: true,
     },
 
-    weights: [
-      {
-        careerId: {
-          type: Schema.Types.ObjectId,
-          ref: "Career",
-        },
-
-        score: Number,
-      },
-    ],
+    riasec: {
+      R: { type: Number, default: 0 },
+      I: { type: Number, default: 0 },
+      A: { type: Number, default: 0 },
+      S: { type: Number, default: 0 },
+      E: { type: Number, default: 0 },
+      C: { type: Number, default: 0 },
+    },
   },
   { _id: false },
 );

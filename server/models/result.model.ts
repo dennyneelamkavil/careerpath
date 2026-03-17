@@ -20,16 +20,16 @@ const ResultSchema = new Schema(
       ref: "AssessmentAttempt",
     },
 
-    careerMatches: [
-      {
-        careerId: {
-          type: Schema.Types.ObjectId,
-          ref: "Career",
-        },
+    scores: {
+      R: Number,
+      I: Number,
+      A: Number,
+      S: Number,
+      E: Number,
+      C: Number,
+    },
 
-        score: Number,
-      },
-    ],
+    hollandCode: String,
   },
   { timestamps: true },
 );

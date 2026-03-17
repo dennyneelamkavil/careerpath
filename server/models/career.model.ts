@@ -10,9 +10,12 @@ const CareerSchema = new Schema(
 
     description: String,
 
-    category: String,
+    riasecCode: {
+      type: String,
+      required: true,
+    },
 
-    icon: String,
+    category: String,
 
     isActive: {
       type: Boolean,
