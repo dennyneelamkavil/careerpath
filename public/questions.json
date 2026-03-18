@@ -1,6 +1,6 @@
 [
   {
-    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "assessmentId": { "$oid": "69ba8bf5d0d70f148c2121a8" },
     "question": "I enjoy building or assembling physical objects",
     "order": 1,
     "options": [
@@ -11,7 +11,7 @@
     ]
   },
   {
-    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "assessmentId": { "$oid": "69ba8bf5d0d70f148c2121a8" },
     "question": "I like repairing machines or devices",
     "order": 2,
     "options": [
@@ -22,7 +22,7 @@
     ]
   },
   {
-    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "assessmentId": { "$oid": "69ba8bf5d0d70f148c2121a8" },
     "question": "I prefer working outdoors rather than in an office",
     "order": 3,
     "options": [
@@ -33,7 +33,7 @@
     ]
   },
   {
-    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "assessmentId": { "$oid": "69ba8bf5d0d70f148c2121a8" },
     "question": "I enjoy hands-on activities more than theoretical work",
     "order": 4,
     "options": [
@@ -44,7 +44,7 @@
     ]
   },
   {
-    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "assessmentId": { "$oid": "69ba8bf5d0d70f148c2121a8" },
     "question": "I like working with tools and equipment",
     "order": 5,
     "options": [
@@ -55,7 +55,7 @@
     ]
   },
   {
-    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "assessmentId": { "$oid": "69ba8bf5d0d70f148c2121a8" },
     "question": "I enjoy physical or manual tasks",
     "order": 6,
     "options": [
@@ -66,7 +66,7 @@
     ]
   },
   {
-    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "assessmentId": { "$oid": "69ba8bf5d0d70f148c2121a8" },
     "question": "I like working with vehicles or engines",
     "order": 7,
     "options": [
@@ -77,7 +77,7 @@
     ]
   },
   {
-    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "assessmentId": { "$oid": "69ba8bf5d0d70f148c2121a8" },
     "question": "I prefer practical tasks over abstract thinking",
     "order": 8,
     "options": [
@@ -88,7 +88,7 @@
     ]
   },
   {
-    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "assessmentId": { "$oid": "69ba8bf5d0d70f148c2121a8" },
     "question": "I enjoy working with my hands to create things",
     "order": 9,
     "options": [
@@ -99,7 +99,7 @@
     ]
   },
   {
-    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "assessmentId": { "$oid": "69ba8bf5d0d70f148c2121a8" },
     "question": "I enjoy technical hands-on problem solving",
     "order": 10,
     "options": [
@@ -111,7 +111,7 @@
   },
 
   {
-    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "assessmentId": { "$oid": "69ba8bf5d0d70f148c2121a8" },
     "question": "I enjoy analyzing data to find patterns",
     "order": 11,
     "options": [
@@ -122,7 +122,7 @@
     ]
   },
   {
-    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "assessmentId": { "$oid": "69ba8bf5d0d70f148c2121a8" },
     "question": "I like solving complex logical problems",
     "order": 12,
     "options": [
@@ -133,7 +133,7 @@
     ]
   },
   {
-    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "assessmentId": { "$oid": "69ba8bf5d0d70f148c2121a8" },
     "question": "I enjoy scientific research or experiments",
     "order": 13,
     "options": [
@@ -144,7 +144,7 @@
     ]
   },
   {
-    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "assessmentId": { "$oid": "69ba8bf5d0d70f148c2121a8" },
     "question": "I enjoy learning new theories and concepts",
     "order": 14,
     "options": [
@@ -155,7 +155,7 @@
     ]
   },
   {
-    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "assessmentId": { "$oid": "69ba8bf5d0d70f148c2121a8" },
     "question": "I enjoy working with numbers and statistics",
     "order": 15,
     "options": [
@@ -166,7 +166,7 @@
     ]
   },
   {
-    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "assessmentId": { "$oid": "69ba8bf5d0d70f148c2121a8" },
     "question": "I like solving puzzles or brain teasers",
     "order": 16,
     "options": [
@@ -177,7 +177,7 @@
     ]
   },
   {
-    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "assessmentId": { "$oid": "69ba8bf5d0d70f148c2121a8" },
     "question": "I enjoy working independently on intellectual tasks",
     "order": 17,
     "options": [
@@ -188,7 +188,7 @@
     ]
   },
   {
-    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "assessmentId": { "$oid": "69ba8bf5d0d70f148c2121a8" },
     "question": "I enjoy analyzing how things work",
     "order": 18,
     "options": [
@@ -199,7 +199,7 @@
     ]
   },
   {
-    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "assessmentId": { "$oid": "69ba8bf5d0d70f148c2121a8" },
     "question": "I enjoy researching topics deeply",
     "order": 19,
     "options": [
@@ -210,7 +210,7 @@
     ]
   },
   {
-    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "assessmentId": { "$oid": "69ba8bf5d0d70f148c2121a8" },
     "question": "I like working on challenging intellectual problems",
     "order": 20,
     "options": [
@@ -222,7 +222,7 @@
   },
 
   {
-    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "assessmentId": { "$oid": "69ba8bf5d0d70f148c2121a8" },
     "question": "I enjoy creating art, music, or designs",
     "order": 21,
     "options": [
@@ -233,7 +233,7 @@
     ]
   },
   {
-    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "assessmentId": { "$oid": "69ba8bf5d0d70f148c2121a8" },
     "question": "I like expressing ideas creatively",
     "order": 22,
     "options": [
@@ -244,7 +244,7 @@
     ]
   },
   {
-    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "assessmentId": { "$oid": "69ba8bf5d0d70f148c2121a8" },
     "question": "I enjoy writing stories or poetry",
     "order": 23,
     "options": [
@@ -255,7 +255,7 @@
     ]
   },
   {
-    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "assessmentId": { "$oid": "69ba8bf5d0d70f148c2121a8" },
     "question": "I enjoy thinking outside the box",
     "order": 24,
     "options": [
@@ -266,7 +266,7 @@
     ]
   },
   {
-    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "assessmentId": { "$oid": "69ba8bf5d0d70f148c2121a8" },
     "question": "I enjoy designing visuals or layouts",
     "order": 25,
     "options": [
@@ -277,7 +277,7 @@
     ]
   },
   {
-    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "assessmentId": { "$oid": "69ba8bf5d0d70f148c2121a8" },
     "question": "I enjoy performing or presenting creatively",
     "order": 26,
     "options": [
@@ -288,7 +288,7 @@
     ]
   },
   {
-    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "assessmentId": { "$oid": "69ba8bf5d0d70f148c2121a8" },
     "question": "I like experimenting with new ideas",
     "order": 27,
     "options": [
@@ -299,7 +299,7 @@
     ]
   },
   {
-    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "assessmentId": { "$oid": "69ba8bf5d0d70f148c2121a8" },
     "question": "I enjoy creative problem solving",
     "order": 28,
     "options": [
@@ -310,7 +310,7 @@
     ]
   },
   {
-    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "assessmentId": { "$oid": "69ba8bf5d0d70f148c2121a8" },
     "question": "I like working in unstructured environments",
     "order": 29,
     "options": [
@@ -321,7 +321,7 @@
     ]
   },
   {
-    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "assessmentId": { "$oid": "69ba8bf5d0d70f148c2121a8" },
     "question": "I enjoy visual storytelling",
     "order": 30,
     "options": [
@@ -333,7 +333,7 @@
   },
 
   {
-    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "assessmentId": { "$oid": "69ba8bf5d0d70f148c2121a8" },
     "question": "I enjoy helping others solve personal problems",
     "order": 31,
     "options": [
@@ -344,7 +344,7 @@
     ]
   },
   {
-    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "assessmentId": { "$oid": "69ba8bf5d0d70f148c2121a8" },
     "question": "I enjoy teaching or mentoring people",
     "order": 32,
     "options": [
@@ -355,7 +355,7 @@
     ]
   },
   {
-    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "assessmentId": { "$oid": "69ba8bf5d0d70f148c2121a8" },
     "question": "I enjoy working in teams",
     "order": 33,
     "options": [
@@ -366,7 +366,7 @@
     ]
   },
   {
-    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "assessmentId": { "$oid": "69ba8bf5d0d70f148c2121a8" },
     "question": "I enjoy listening to people's concerns",
     "order": 34,
     "options": [
@@ -377,7 +377,7 @@
     ]
   },
   {
-    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "assessmentId": { "$oid": "69ba8bf5d0d70f148c2121a8" },
     "question": "I enjoy volunteering or community work",
     "order": 35,
     "options": [
@@ -388,7 +388,7 @@
     ]
   },
   {
-    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "assessmentId": { "$oid": "69ba8bf5d0d70f148c2121a8" },
     "question": "I like working in people-focused roles",
     "order": 36,
     "options": [
@@ -399,7 +399,7 @@
     ]
   },
   {
-    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "assessmentId": { "$oid": "69ba8bf5d0d70f148c2121a8" },
     "question": "I enjoy guiding others in decision making",
     "order": 37,
     "options": [
@@ -410,7 +410,7 @@
     ]
   },
   {
-    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "assessmentId": { "$oid": "69ba8bf5d0d70f148c2121a8" },
     "question": "I enjoy building relationships with others",
     "order": 38,
     "options": [
@@ -421,7 +421,7 @@
     ]
   },
   {
-    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "assessmentId": { "$oid": "69ba8bf5d0d70f148c2121a8" },
     "question": "I like supporting others emotionally",
     "order": 39,
     "options": [
@@ -432,7 +432,7 @@
     ]
   },
   {
-    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "assessmentId": { "$oid": "69ba8bf5d0d70f148c2121a8" },
     "question": "I enjoy facilitating group discussions",
     "order": 40,
     "options": [
@@ -444,7 +444,7 @@
   },
 
   {
-    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "assessmentId": { "$oid": "69ba8bf5d0d70f148c2121a8" },
     "question": "I enjoy leading teams or projects",
     "order": 41,
     "options": [
@@ -455,7 +455,7 @@
     ]
   },
   {
-    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "assessmentId": { "$oid": "69ba8bf5d0d70f148c2121a8" },
     "question": "I like persuading people to accept my ideas",
     "order": 42,
     "options": [
@@ -466,7 +466,7 @@
     ]
   },
   {
-    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "assessmentId": { "$oid": "69ba8bf5d0d70f148c2121a8" },
     "question": "I enjoy taking initiative in group settings",
     "order": 43,
     "options": [
@@ -477,7 +477,7 @@
     ]
   },
   {
-    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "assessmentId": { "$oid": "69ba8bf5d0d70f148c2121a8" },
     "question": "I enjoy making business decisions",
     "order": 44,
     "options": [
@@ -488,7 +488,7 @@
     ]
   },
   {
-    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "assessmentId": { "$oid": "69ba8bf5d0d70f148c2121a8" },
     "question": "I like negotiating or debating",
     "order": 45,
     "options": [
@@ -499,7 +499,7 @@
     ]
   },
   {
-    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "assessmentId": { "$oid": "69ba8bf5d0d70f148c2121a8" },
     "question": "I enjoy setting and achieving goals",
     "order": 46,
     "options": [
@@ -510,7 +510,7 @@
     ]
   },
   {
-    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "assessmentId": { "$oid": "69ba8bf5d0d70f148c2121a8" },
     "question": "I like taking risks in projects",
     "order": 47,
     "options": [
@@ -521,7 +521,7 @@
     ]
   },
   {
-    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "assessmentId": { "$oid": "69ba8bf5d0d70f148c2121a8" },
     "question": "I enjoy motivating others to achieve goals",
     "order": 48,
     "options": [
@@ -532,7 +532,7 @@
     ]
   },
   {
-    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "assessmentId": { "$oid": "69ba8bf5d0d70f148c2121a8" },
     "question": "I like being in positions of authority",
     "order": 49,
     "options": [
@@ -543,7 +543,7 @@
     ]
   },
   {
-    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "assessmentId": { "$oid": "69ba8bf5d0d70f148c2121a8" },
     "question": "I enjoy influencing people’s decisions",
     "order": 50,
     "options": [
@@ -555,7 +555,7 @@
   },
 
   {
-    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "assessmentId": { "$oid": "69ba8bf5d0d70f148c2121a8" },
     "question": "I like organizing files and records",
     "order": 51,
     "options": [
@@ -566,7 +566,7 @@
     ]
   },
   {
-    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "assessmentId": { "$oid": "69ba8bf5d0d70f148c2121a8" },
     "question": "I enjoy working with structured systems",
     "order": 52,
     "options": [
@@ -577,7 +577,7 @@
     ]
   },
   {
-    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "assessmentId": { "$oid": "69ba8bf5d0d70f148c2121a8" },
     "question": "I prefer clear rules and procedures",
     "order": 53,
     "options": [
@@ -588,7 +588,7 @@
     ]
   },
   {
-    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "assessmentId": { "$oid": "69ba8bf5d0d70f148c2121a8" },
     "question": "I enjoy working with numbers and data entry",
     "order": 54,
     "options": [
@@ -599,7 +599,7 @@
     ]
   },
   {
-    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "assessmentId": { "$oid": "69ba8bf5d0d70f148c2121a8" },
     "question": "I like following established processes",
     "order": 55,
     "options": [
@@ -610,7 +610,7 @@
     ]
   },
   {
-    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "assessmentId": { "$oid": "69ba8bf5d0d70f148c2121a8" },
     "question": "I enjoy organizing schedules and plans",
     "order": 56,
     "options": [
@@ -621,7 +621,7 @@
     ]
   },
   {
-    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "assessmentId": { "$oid": "69ba8bf5d0d70f148c2121a8" },
     "question": "I prefer accuracy over creativity",
     "order": 57,
     "options": [
@@ -632,7 +632,7 @@
     ]
   },
   {
-    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "assessmentId": { "$oid": "69ba8bf5d0d70f148c2121a8" },
     "question": "I enjoy detailed and repetitive tasks",
     "order": 58,
     "options": [
@@ -643,7 +643,7 @@
     ]
   },
   {
-    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "assessmentId": { "$oid": "69ba8bf5d0d70f148c2121a8" },
     "question": "I like maintaining organized systems",
     "order": 59,
     "options": [
@@ -654,7 +654,7 @@
     ]
   },
   {
-    "assessmentId": { "$oid": "YOUR_ASSESSMENT_ID" },
+    "assessmentId": { "$oid": "69ba8bf5d0d70f148c2121a8" },
     "question": "I prefer working with structured information",
     "order": 60,
     "options": [

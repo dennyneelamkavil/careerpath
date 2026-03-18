@@ -1,3 +1,7 @@
+import "server-only";
+
+import { connectDB } from "@/server/db";
+
 import { AssessmentModel } from "@/server/models/assessment.model";
 import { AssessmentAttemptModel } from "@/server/models/assessment-attempt.model";
 import { AnswerModel } from "@/server/models/answer.model";
@@ -6,6 +10,8 @@ import { QuestionModel } from "@/server/models/question.model";
 import { CareerModel } from "@/server/models/career.model";
 
 export async function listAssessments() {
+  await connectDB();
+
   const assessments = await AssessmentModel.find({ isActive: true }).lean();
 
   return assessments.map((a) => ({
@@ -18,6 +24,8 @@ export async function listAssessments() {
 }
 
 export async function getAssessmentQuestions(assessmentId: string) {
+  await connectDB();
+
   const questions = await QuestionModel.find({ assessmentId })
     .sort({ order: 1 })
     .lean();
@@ -39,6 +47,8 @@ export async function startAssessment({
   studentId: string;
   assessmentId: string;
 }) {
+  await connectDB();
+
   const attempt = await AssessmentAttemptModel.create({
     studentId,
     assessmentId,
@@ -57,6 +67,8 @@ export async function saveAnswer({
   questionId: string;
   selectedOptionIndex: number;
 }) {
+  await connectDB();
+
   return AnswerModel.findOneAndUpdate(
     { attemptId, questionId },
     { selectedOptionIndex },
@@ -65,6 +77,8 @@ export async function saveAnswer({
 }
 
 export async function submitAssessment({ attemptId }: { attemptId: string }) {
+  await connectDB();
+
   await AssessmentAttemptModel.findByIdAndUpdate(attemptId, {
     status: "completed",
     completedAt: new Date(),
@@ -77,6 +91,8 @@ export async function submitAssessment({ attemptId }: { attemptId: string }) {
 }
 
 export async function calculateResult(attemptId: string) {
+  await connectDB();
+
   // 1️⃣ Get attempt
   const attempt = await AssessmentAttemptModel.findById(attemptId);
 
@@ -142,5 +158,7 @@ export async function calculateResult(attemptId: string) {
 }
 
 export async function getResult(attemptId: string) {
+  await connectDB();
+
   return ResultModel.findOne({ attemptId }).populate("careers");
 }
