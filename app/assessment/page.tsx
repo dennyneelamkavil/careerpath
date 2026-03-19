@@ -89,7 +89,7 @@ export default function Assessment() {
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ attemptId }),
         });
-        window.location.href = `dashboard/results/${attemptId}`;
+        window.location.href = `dashboard/assessments/results/${attemptId}`;
       } catch (error) {
         console.error("Failed to submit assessment:", error);
         setIsSubmitting(false);
