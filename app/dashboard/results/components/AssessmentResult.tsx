@@ -182,7 +182,7 @@ export default function AssessmentResult({ id }: Props) {
             <span>Dashboard</span>
           </Link>
           <Link
-            href="/dashboard/results"
+            href="/dashboard/results/69bb9907b04adf595bb77105"
             className="flex items-center gap-3 px-3 py-2 bg-indigo-50 dark:bg-indigo-900/20 text-indigo-600 dark:text-indigo-400 rounded-lg font-medium"
           >
             <HelpCircle className="w-5 h-5 fill-indigo-100 dark:fill-indigo-900" />
