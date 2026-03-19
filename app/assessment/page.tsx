@@ -13,6 +13,7 @@ export default function Assessment() {
   const [attemptId, setAttemptId] = useState<string | null>(null);
   const [answers, setAnswers] = useState<Record<string, number>>({});
   const [loading, setLoading] = useState(true);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   // 🚀 Fetch questions + start attempt
   useEffect(() => {
@@ -80,6 +81,7 @@ export default function Assessment() {
     if (currentIndex < questions.length - 1) {
       setCurrentIndex((prev) => prev + 1);
     } else {
+      setIsSubmitting(true);
       // Submit at last question
       try {
         await fetch(`/api/student/v1/assessments/submit`, {
@@ -90,6 +92,7 @@ export default function Assessment() {
         window.location.href = `dashboard/results/${attemptId}`;
       } catch (error) {
         console.error("Failed to submit assessment:", error);
+        setIsSubmitting(false);
       }
     }
   }
@@ -189,6 +192,7 @@ export default function Assessment() {
                     <button
                       key={q._id || idx}
                       onClick={() => setCurrentIndex(idx)}
+                      disabled={isSubmitting}
                       className={btnStyle}
                     >
                       {idx + 1}
@@ -246,6 +250,7 @@ export default function Assessment() {
                       return (
                         <button
                           key={optIdx}
+                          disabled={isSubmitting}
                           onClick={() => handleAnswer(optIdx)}
                           className={`group flex items-center gap-4 p-4 rounded-xl border transition-all text-left ${
                             isSelected
@@ -282,9 +287,9 @@ export default function Assessment() {
               <div className="bg-slate-50 dark:bg-slate-800/40 px-8 py-6 flex justify-between items-center border-t border-slate-100 dark:border-slate-800">
                 <button
                   onClick={handlePrev}
-                  disabled={currentIndex === 0}
+                  disabled={currentIndex === 0 || isSubmitting}
                   className={`flex items-center gap-2 px-6 py-3 font-semibold transition-colors ${
-                    currentIndex === 0
+                    currentIndex === 0 || isSubmitting
                       ? "text-slate-300 dark:text-slate-700 cursor-not-allowed"
                       : "text-slate-500 hover:text-slate-900 dark:hover:text-white"
                   }`}
@@ -294,12 +299,15 @@ export default function Assessment() {
                 </button>
                 <button
                   onClick={handleNext}
+                  disabled={isSubmitting}
                   className="flex items-center gap-2 px-8 py-3 bg-blue-600 text-white font-bold rounded-lg shadow-lg shadow-blue-600/20 hover:bg-blue-700 transition-all"
                 >
                   <span>
-                    {currentIndex === questions.length - 1
-                      ? "Submit Assessment"
-                      : "Next Question"}
+                    {isSubmitting
+                      ? "Submitting..."
+                      : currentIndex === questions.length - 1
+                        ? "Submit Assessment"
+                        : "Next Question"}
                   </span>
                   {currentIndex < questions.length - 1 && (
                     <ArrowRight className="w-5 h-5" />
