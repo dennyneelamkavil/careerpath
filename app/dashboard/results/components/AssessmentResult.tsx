@@ -1,3 +1,6 @@
+"use client";
+
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -17,21 +20,149 @@ import {
   Download,
   RotateCcw,
   LayoutTemplate,
-  CheckCircle2,
 } from "lucide-react";
 
 type Props = {
-  id: string;
+  id: string; // attemptId from params
+};
+
+// Mapping dictionary for Holland Code letters to UI elements
+const HOLLAND_MAP: Record<
+  string,
+  {
+    name: string;
+    color: string;
+    bgLight: string;
+    bgDark: string;
+    textColor: string;
+  }
+> = {
+  R: {
+    name: "Realistic",
+    color: "bg-slate-600",
+    bgLight: "bg-slate-50",
+    bgDark: "dark:bg-slate-900/20",
+    textColor: "text-slate-900 dark:text-slate-200",
+  },
+  I: {
+    name: "Investigative",
+    color: "bg-indigo-600",
+    bgLight: "bg-indigo-50",
+    bgDark: "dark:bg-indigo-900/20",
+    textColor: "text-indigo-900 dark:text-indigo-200",
+  },
+  A: {
+    name: "Artistic",
+    color: "bg-purple-500",
+    bgLight: "bg-purple-50",
+    bgDark: "dark:bg-purple-900/20",
+    textColor: "text-purple-900 dark:text-purple-200",
+  },
+  S: {
+    name: "Social",
+    color: "bg-cyan-500",
+    bgLight: "bg-cyan-50",
+    bgDark: "dark:bg-cyan-900/20",
+    textColor: "text-cyan-900 dark:text-cyan-200",
+  },
+  E: {
+    name: "Enterprising",
+    color: "bg-orange-500",
+    bgLight: "bg-orange-50",
+    bgDark: "dark:bg-orange-900/20",
+    textColor: "text-orange-900 dark:text-orange-200",
+  },
+  C: {
+    name: "Conventional",
+    color: "bg-emerald-500",
+    bgLight: "bg-emerald-50",
+    bgDark: "dark:bg-emerald-900/20",
+    textColor: "text-emerald-900 dark:text-emerald-200",
+  },
 };
 
 export default function AssessmentResult({ id }: Props) {
+  const [result, setResult] = useState<any>(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    async function fetchResult() {
+      try {
+        const res = await fetch(`/api/student/v1/results/${id}`);
+        const data = await res.json();
+        setResult(data);
+      } catch (error) {
+        console.error("Failed to fetch assessment result:", error);
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    if (id) fetchResult();
+  }, [id]);
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-slate-50 dark:bg-slate-950 flex items-center justify-center">
+        <div className="w-8 h-8 border-4 border-indigo-600 border-t-transparent rounded-full animate-spin"></div>
+      </div>
+    );
+  }
+
+  if (!result) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <p className="text-slate-500">Result not found.</p>
+      </div>
+    );
+  }
+
+  // Safe destructure with defaults
+  const scores = result.scores || { R: 0, I: 0, A: 0, S: 0, E: 0, C: 0 };
+  const maxScore = Math.max(
+    ...Object.values(scores as Record<string, number>),
+    20,
+  ); // Scale chart relative to highest score, min 20
+  const hollandLetters = (result.hollandCode || "IAS").split("");
+
+  // Format Completion Date
+  const completedDate = result.createdAt
+    ? new Date(result.createdAt).toLocaleDateString("en-US", {
+        month: "long",
+        day: "numeric",
+        year: "numeric",
+      })
+    : "Recently";
+
+  // Radar Chart calculation (6 axes evenly spaced around a circle)
+  const getRadarPoint = (score: number, angleIdx: number) => {
+    const radius = (score / maxScore) * 80; // 80 is max radius of the SVG polygon
+    const angle = (angleIdx * Math.PI) / 3 - Math.PI / 2; // Start at top (-90deg), distribute by 60deg
+    const x = 100 + radius * Math.cos(angle);
+    const y = 100 + radius * Math.sin(angle);
+    return `${x},${y}`;
+  };
+
+  // Order maps directly to radar chart points [Top, Top-Right, Bottom-Right, Bottom, Bottom-Left, Top-Left]
+  const radarOrder = [
+    { key: "R", val: scores.R },
+    { key: "I", val: scores.I },
+    { key: "A", val: scores.A },
+    { key: "S", val: scores.S },
+    { key: "E", val: scores.E },
+    { key: "C", val: scores.C },
+  ];
+
+  const radarPolygonPoints = radarOrder
+    .map((item, idx) => getRadarPoint(item.val, idx))
+    .join(" ");
+
   return (
     <div className="flex min-h-screen bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 font-sans">
       {/* Sidebar */}
       <aside className="w-64 border-r border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 hidden lg:flex flex-col">
         <div className="p-6 flex items-center gap-3">
           <div className="text-indigo-600 dark:text-indigo-400">
-            {/* Custom Icon matching the "Indigo Scholar" style */}
             <div className="flex flex-col gap-0.5">
               <span className="text-xl font-bold leading-none tracking-tight">
                 CareerPath
@@ -167,7 +298,7 @@ export default function AssessmentResult({ id }: Props) {
                   RIASEC Advanced Inventory
                 </span>
                 <span className="text-xs text-slate-500 font-medium">
-                  Completed on October 24, 2023
+                  Completed on {completedDate}
                 </span>
               </div>
             </div>
@@ -182,34 +313,28 @@ export default function AssessmentResult({ id }: Props) {
               </p>
               <h2 className="text-4xl sm:text-5xl font-extrabold text-slate-900 dark:text-white mb-8">
                 Your Holland <br /> Code:{" "}
-                <span className="text-indigo-600">IAS</span>
+                <span className="text-indigo-600">{result.hollandCode}</span>
               </h2>
 
               <div className="flex flex-wrap gap-4">
-                <div className="flex items-center gap-3 bg-indigo-50 dark:bg-indigo-900/20 px-4 py-3 rounded-xl">
-                  <span className="w-8 h-8 rounded-lg bg-indigo-600 text-white flex items-center justify-center font-bold">
-                    I
-                  </span>
-                  <span className="font-bold text-indigo-900 dark:text-indigo-200">
-                    Investigative
-                  </span>
-                </div>
-                <div className="flex items-center gap-3 bg-purple-50 dark:bg-purple-900/20 px-4 py-3 rounded-xl">
-                  <span className="w-8 h-8 rounded-lg bg-purple-500 text-white flex items-center justify-center font-bold">
-                    A
-                  </span>
-                  <span className="font-bold text-purple-900 dark:text-purple-200">
-                    Artistic
-                  </span>
-                </div>
-                <div className="flex items-center gap-3 bg-cyan-50 dark:bg-cyan-900/20 px-4 py-3 rounded-xl">
-                  <span className="w-8 h-8 rounded-lg bg-cyan-500 text-white flex items-center justify-center font-bold">
-                    S
-                  </span>
-                  <span className="font-bold text-cyan-900 dark:text-cyan-200">
-                    Social
-                  </span>
-                </div>
+                {hollandLetters.map((letter: string, index: number) => {
+                  const style = HOLLAND_MAP[letter] || HOLLAND_MAP.I; // Fallback to Investigative colors
+                  return (
+                    <div
+                      key={index}
+                      className={`flex items-center gap-3 ${style.bgLight} ${style.bgDark} px-4 py-3 rounded-xl`}
+                    >
+                      <span
+                        className={`w-8 h-8 rounded-lg ${style.color} text-white flex items-center justify-center font-bold`}
+                      >
+                        {letter}
+                      </span>
+                      <span className={`font-bold ${style.textColor}`}>
+                        {style.name}
+                      </span>
+                    </div>
+                  );
+                })}
               </div>
             </div>
 
@@ -228,11 +353,11 @@ export default function AssessmentResult({ id }: Props) {
               </div>
 
               <div className="flex flex-col sm:flex-row items-center gap-8 flex-1">
-                {/* SVG Radar Chart Representation */}
+                {/* Dynamic SVG Radar Chart */}
                 <div className="w-48 h-48 relative flex-shrink-0">
                   <svg
                     viewBox="0 0 200 200"
-                    className="w-full h-full transform -rotate-90"
+                    className="w-full h-full transform -rotate-90 overflow-visible"
                   >
                     {/* Background Hexagons */}
                     {[40, 60, 80].map((radius, i) => (
@@ -249,139 +374,82 @@ export default function AssessmentResult({ id }: Props) {
                       />
                     ))}
                     {/* Axes lines */}
-                    <line
-                      x1="100"
-                      y1="100"
-                      x2="100"
-                      y2="20"
-                      stroke="#e2e8f0"
-                      strokeWidth="1"
-                    />
-                    <line
-                      x1="100"
-                      y1="100"
-                      x2="169.28"
-                      y2="60"
-                      stroke="#e2e8f0"
-                      strokeWidth="1"
-                    />
-                    <line
-                      x1="100"
-                      y1="100"
-                      x2="169.28"
-                      y2="140"
-                      stroke="#e2e8f0"
-                      strokeWidth="1"
-                    />
-                    <line
-                      x1="100"
-                      y1="100"
-                      x2="100"
-                      y2="180"
-                      stroke="#e2e8f0"
-                      strokeWidth="1"
-                    />
-                    <line
-                      x1="100"
-                      y1="100"
-                      x2="30.72"
-                      y2="140"
-                      stroke="#e2e8f0"
-                      strokeWidth="1"
-                    />
-                    <line
-                      x1="100"
-                      y1="100"
-                      x2="30.72"
-                      y2="60"
-                      stroke="#e2e8f0"
-                      strokeWidth="1"
-                    />
+                    {[0, 1, 2, 3, 4, 5].map((idx) => {
+                      const angle = (idx * Math.PI) / 3 - Math.PI / 2;
+                      return (
+                        <line
+                          key={idx}
+                          x1="100"
+                          y1="100"
+                          x2={100 + 80 * Math.cos(angle)}
+                          y2={100 + 80 * Math.sin(angle)}
+                          stroke="#e2e8f0"
+                          strokeWidth="1"
+                        />
+                      );
+                    })}
 
-                    {/* Data Polygon */}
+                    {/* Dynamic Data Polygon */}
                     <polygon
-                      points="100,30 155,60 145,140 100,165 40,140 65,60"
-                      fill="rgba(79, 70, 229, 0.1)"
+                      points={radarPolygonPoints}
+                      fill="rgba(79, 70, 229, 0.15)"
                       stroke="#4f46e5"
                       strokeWidth="3"
                       strokeLinejoin="round"
                     />
-                    {/* Data Points */}
-                    <circle cx="100" cy="30" r="4" fill="#4f46e5" />
-                    <circle cx="155" cy="60" r="4" fill="#4f46e5" />
-                    <circle cx="145" cy="140" r="4" fill="#4f46e5" />
-                    <circle cx="100" cy="165" r="4" fill="#4f46e5" />
-                    <circle cx="40" cy="140" r="4" fill="#4f46e5" />
-                    <circle cx="65" cy="60" r="4" fill="#4f46e5" />
+
+                    {/* Dynamic Data Points */}
+                    {radarOrder.map((item, idx) => {
+                      const [cx, cy] = getRadarPoint(item.val, idx).split(",");
+                      return (
+                        <circle
+                          key={idx}
+                          cx={cx}
+                          cy={cy}
+                          r="4"
+                          fill="#4f46e5"
+                        />
+                      );
+                    })}
                   </svg>
-                  {/* Fake Labels for radar chart to match image layout */}
-                  <span className="absolute top-2 left-1/2 -translate-x-1/2 text-[10px] font-bold text-slate-400">
-                    I: 18
+
+                  {/* Axis Labels */}
+                  <span className="absolute -top-3 left-1/2 -translate-x-1/2 text-[10px] font-bold text-slate-400">
+                    R
                   </span>
-                  <span className="absolute bottom-2 left-1/2 -translate-x-1/2 text-[10px] font-bold text-slate-400">
-                    E: 7
+                  <span className="absolute top-1/4 -right-2 text-[10px] font-bold text-slate-400">
+                    I
                   </span>
-                  <span className="absolute top-1/4 right-0 text-[10px] font-bold text-slate-400">
-                    A: 15
+                  <span className="absolute bottom-1/4 -right-2 text-[10px] font-bold text-slate-400">
+                    A
                   </span>
-                  <span className="absolute top-1/4 left-0 text-[10px] font-bold text-slate-400">
-                    R: 6
+                  <span className="absolute -bottom-3 left-1/2 -translate-x-1/2 text-[10px] font-bold text-slate-400">
+                    S
+                  </span>
+                  <span className="absolute bottom-1/4 -left-2 text-[10px] font-bold text-slate-400">
+                    E
+                  </span>
+                  <span className="absolute top-1/4 -left-2 text-[10px] font-bold text-slate-400">
+                    C
                   </span>
                 </div>
 
-                {/* Score Bars */}
+                {/* Score Progress Bars */}
                 <div className="flex-1 w-full space-y-4">
-                  {[
-                    {
-                      label: "Investigative",
-                      score: 18,
-                      max: 20,
-                      color: "bg-indigo-500",
-                    },
-                    {
-                      label: "Artistic",
-                      score: 15,
-                      max: 20,
-                      color: "bg-purple-500",
-                    },
-                    {
-                      label: "Social",
-                      score: 14,
-                      max: 20,
-                      color: "bg-cyan-500",
-                    },
-                    {
-                      label: "Enterprising",
-                      score: 7,
-                      max: 20,
-                      color: "bg-slate-300",
-                    },
-                    {
-                      label: "Realistic",
-                      score: 6,
-                      max: 20,
-                      color: "bg-slate-300",
-                    },
-                    {
-                      label: "Conventional",
-                      score: 5,
-                      max: 20,
-                      color: "bg-slate-300",
-                    },
-                  ].map((item, idx) => (
+                  {radarOrder.map((item, idx) => (
                     <div key={idx} className="w-full">
                       <div className="flex justify-between text-xs font-bold mb-1">
                         <span className="text-slate-700 dark:text-slate-300">
-                          {item.label}
+                          {HOLLAND_MAP[item.key].name}
                         </span>
                         <span className="text-slate-400">
-                          {item.score}/{item.max}
+                          {item.val}/{maxScore}
                         </span>
                       </div>
                       <div className="w-full h-1.5 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
                         <div
-                          className={`h-full ${item.color} rounded-full`}
-                          style={{ width: `${(item.score / item.max) * 100}%` }}
+                          className={`h-full ${HOLLAND_MAP[item.key].color} rounded-full`}
+                          style={{ width: `${(item.val / maxScore) * 100}%` }}
                         ></div>
                       </div>
                     </div>
@@ -393,34 +461,34 @@ export default function AssessmentResult({ id }: Props) {
 
           {/* Personality Type Split Card */}
           <div className="flex flex-col md:flex-row rounded-2xl overflow-hidden shadow-sm border border-slate-200 dark:border-slate-800">
-            {/* Left Dark Side */}
             <div className="bg-[#0f172a] text-white p-8 md:p-12 md:w-1/3 flex flex-col justify-center">
               <div className="w-10 h-10 rounded-xl bg-indigo-500/20 flex items-center justify-center text-indigo-400 mb-6">
                 <Brain className="w-5 h-5" />
               </div>
               <h3 className="text-2xl font-bold mb-2">Your Personality Type</h3>
               <p className="text-slate-400 font-medium text-lg">
-                The Intuitive Architect
+                The {HOLLAND_MAP[hollandLetters[0]]?.name || "Versatile"}{" "}
+                Architect
               </p>
             </div>
-            {/* Right Light Side */}
             <div className="bg-white dark:bg-slate-900 p-8 md:p-12 md:w-2/3 flex flex-col justify-center">
               <p className="text-slate-600 dark:text-slate-300 text-lg leading-relaxed italic mb-8">
-                &quot;You possess a unique blend of analytical rigor and
-                creative expression. Your high Investigative score suggests a
-                deep-seated need to understand how systems work, while your
-                Artistic affinity drives you to find elegant, human-centric
-                solutions. You aren&apos;t just a problem-solver; you are a
-                conceptual builder who values social impact and intellectual
-                discovery.&quot;
+                &quot;You possess a unique blend of attributes guided by your{" "}
+                {result.hollandCode} profile. Your high{" "}
+                {HOLLAND_MAP[hollandLetters[0]]?.name} score suggests a
+                deep-seated need for your primary motivators, while your{" "}
+                {HOLLAND_MAP[hollandLetters[1]]?.name} affinity drives you to
+                find elegant, human-centric solutions. You aren&apos;t just a
+                participant; you are a conceptual builder who values impact and
+                intellectual discovery.&quot;
               </p>
               <div className="flex flex-col sm:flex-row gap-8 sm:gap-16 pt-6 border-t border-slate-100 dark:border-slate-800">
                 <div>
                   <p className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">
-                    Core Strength
+                    Primary Drive
                   </p>
                   <p className="font-bold text-slate-900 dark:text-white">
-                    Abstract Reasoning
+                    {HOLLAND_MAP[hollandLetters[0]]?.name} Excellence
                   </p>
                 </div>
                 <div>
@@ -442,158 +510,103 @@ export default function AssessmentResult({ id }: Props) {
                 Career Recommendations
               </h3>
               <span className="px-3 py-1 bg-indigo-50 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-300 text-xs font-bold rounded-full">
-                Top 4 Matches
+                Top Matches
               </span>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
-              {/* Card 1 */}
-              <div className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col hover:border-indigo-300 transition-colors">
-                <div className="p-6 flex-1">
-                  <div className="flex justify-between items-start mb-4">
-                    <div className="w-10 h-10 rounded-xl bg-indigo-50 dark:bg-indigo-900/20 flex items-center justify-center text-indigo-600">
-                      <LayoutTemplate className="w-5 h-5" />
-                    </div>
-                    <div className="text-right">
-                      <span className="text-xl font-bold text-indigo-600">
-                        96%
-                      </span>
-                      <p className="text-[10px] font-bold text-slate-400 uppercase">
-                        Match
-                      </p>
-                    </div>
-                  </div>
-                  <h4 className="text-lg font-bold mb-2">Software Developer</h4>
-                  <p className="text-sm text-slate-500 mb-6">
-                    Create complex systems and applications that solve
-                    real-world problems.
-                  </p>
-                  <div className="flex gap-2">
-                    <span className="w-6 h-6 flex items-center justify-center rounded bg-slate-100 dark:bg-slate-800 text-xs font-bold text-slate-600">
-                      I
-                    </span>
-                    <span className="w-6 h-6 flex items-center justify-center rounded bg-slate-100 dark:bg-slate-800 text-xs font-bold text-slate-600">
-                      A
-                    </span>
-                  </div>
-                </div>
-                <div className="border-t border-slate-100 dark:border-slate-800 p-4">
-                  <button className="w-full text-center text-sm font-bold text-indigo-600 hover:text-indigo-700">
-                    Explore Career
-                  </button>
-                </div>
-              </div>
+              {result.careers && result.careers.length > 0 ? (
+                result.careers.slice(0, 4).map((career: any, idx: number) => {
+                  // Fallback icons/colors for dynamic lists
+                  const cardStyles = [
+                    {
+                      icon: <LayoutTemplate className="w-5 h-5" />,
+                      bg: "bg-indigo-50 dark:bg-indigo-900/20",
+                      color: "text-indigo-600",
+                      hover: "hover:border-indigo-300",
+                    },
+                    {
+                      icon: <Palette className="w-5 h-5" />,
+                      bg: "bg-purple-50 dark:bg-purple-900/20",
+                      color: "text-purple-600",
+                      hover: "hover:border-purple-300",
+                    },
+                    {
+                      icon: <HelpCircle className="w-5 h-5" />,
+                      bg: "bg-cyan-50 dark:bg-cyan-900/20",
+                      color: "text-cyan-600",
+                      hover: "hover:border-cyan-300",
+                    },
+                    {
+                      icon: <LineChart className="w-5 h-5" />,
+                      bg: "bg-blue-50 dark:bg-blue-900/20",
+                      color: "text-blue-600",
+                      hover: "hover:border-blue-300",
+                    },
+                  ];
+                  const style = cardStyles[idx % cardStyles.length];
 
-              {/* Card 2 */}
-              <div className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col hover:border-purple-300 transition-colors">
-                <div className="p-6 flex-1">
-                  <div className="flex justify-between items-start mb-4">
-                    <div className="w-10 h-10 rounded-xl bg-purple-50 dark:bg-purple-900/20 flex items-center justify-center text-purple-600">
-                      <Palette className="w-5 h-5" />
-                    </div>
-                    <div className="text-right">
-                      <span className="text-xl font-bold text-purple-600">
-                        94%
-                      </span>
-                      <p className="text-[10px] font-bold text-slate-400 uppercase">
-                        Match
-                      </p>
-                    </div>
-                  </div>
-                  <h4 className="text-lg font-bold mb-2">UX Designer</h4>
-                  <p className="text-sm text-slate-500 mb-6">
-                    Bridge the gap between technology and human psychology
-                    through design.
-                  </p>
-                  <div className="flex gap-2">
-                    <span className="w-6 h-6 flex items-center justify-center rounded bg-slate-100 dark:bg-slate-800 text-xs font-bold text-slate-600">
-                      A
-                    </span>
-                    <span className="w-6 h-6 flex items-center justify-center rounded bg-slate-100 dark:bg-slate-800 text-xs font-bold text-slate-600">
-                      S
-                    </span>
-                  </div>
-                </div>
-                <div className="border-t border-slate-100 dark:border-slate-800 p-4">
-                  <button className="w-full text-center text-sm font-bold text-purple-600 hover:text-purple-700">
-                    Explore Career
-                  </button>
-                </div>
-              </div>
+                  return (
+                    <div
+                      key={idx}
+                      className={`bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col transition-colors ${style.hover}`}
+                    >
+                      <div className="p-6 flex-1">
+                        <div className="flex justify-between items-start mb-4">
+                          <div
+                            className={`w-10 h-10 rounded-xl ${style.bg} flex items-center justify-center ${style.color}`}
+                          >
+                            {style.icon}
+                          </div>
+                          <div className="text-right">
+                            {/* Assuming a match property exists, else provide fallback */}
+                            <span
+                              className={`text-xl font-bold ${style.color}`}
+                            >
+                              {career.matchPercentage || 95 - idx}%
+                            </span>
+                            <p className="text-[10px] font-bold text-slate-400 uppercase">
+                              Match
+                            </p>
+                          </div>
+                        </div>
+                        <h4 className="text-lg font-bold mb-2">
+                          {career.title || career.name || "Career Title"}
+                        </h4>
+                        <p className="text-sm text-slate-500 mb-6 line-clamp-3">
+                          {career.description ||
+                            "Exciting career aligning perfectly with your personality and aptitudes."}
+                        </p>
 
-              {/* Card 3 */}
-              <div className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col hover:border-cyan-300 transition-colors">
-                <div className="p-6 flex-1">
-                  <div className="flex justify-between items-start mb-4">
-                    <div className="w-10 h-10 rounded-xl bg-cyan-50 dark:bg-cyan-900/20 flex items-center justify-center text-cyan-600">
-                      <HelpCircle className="w-5 h-5" />
+                        {/* If career has specific tags/holland letters, render them, otherwise render default from user */}
+                        <div className="flex gap-2">
+                          {(career.tags || hollandLetters.slice(0, 2)).map(
+                            (tag: string, tIdx: number) => (
+                              <span
+                                key={tIdx}
+                                className="w-6 h-6 flex items-center justify-center rounded bg-slate-100 dark:bg-slate-800 text-xs font-bold text-slate-600"
+                              >
+                                {tag.charAt(0).toUpperCase()}
+                              </span>
+                            ),
+                          )}
+                        </div>
+                      </div>
+                      <div className="border-t border-slate-100 dark:border-slate-800 p-4">
+                        <button
+                          className={`w-full text-center text-sm font-bold ${style.color}`}
+                        >
+                          Explore Career
+                        </button>
+                      </div>
                     </div>
-                    <div className="text-right">
-                      <span className="text-xl font-bold text-cyan-600">
-                        92%
-                      </span>
-                      <p className="text-[10px] font-bold text-slate-400 uppercase">
-                        Match
-                      </p>
-                    </div>
-                  </div>
-                  <h4 className="text-lg font-bold mb-2">Psychologist</h4>
-                  <p className="text-sm text-slate-500 mb-6">
-                    Analyze human behavior and mental processes to provide
-                    insights and care.
-                  </p>
-                  <div className="flex gap-2">
-                    <span className="w-6 h-6 flex items-center justify-center rounded bg-slate-100 dark:bg-slate-800 text-xs font-bold text-slate-600">
-                      I
-                    </span>
-                    <span className="w-6 h-6 flex items-center justify-center rounded bg-slate-100 dark:bg-slate-800 text-xs font-bold text-slate-600">
-                      S
-                    </span>
-                  </div>
+                  );
+                })
+              ) : (
+                <div className="col-span-full py-8 text-center text-slate-500">
+                  No specific careers found for this assessment attempt.
                 </div>
-                <div className="border-t border-slate-100 dark:border-slate-800 p-4">
-                  <button className="w-full text-center text-sm font-bold text-cyan-600 hover:text-cyan-700">
-                    Explore Career
-                  </button>
-                </div>
-              </div>
-
-              {/* Card 4 */}
-              <div className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col hover:border-blue-300 transition-colors">
-                <div className="p-6 flex-1">
-                  <div className="flex justify-between items-start mb-4">
-                    <div className="w-10 h-10 rounded-xl bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center text-blue-600">
-                      <LineChart className="w-5 h-5" />
-                    </div>
-                    <div className="text-right">
-                      <span className="text-xl font-bold text-blue-600">
-                        91%
-                      </span>
-                      <p className="text-[10px] font-bold text-slate-400 uppercase">
-                        Match
-                      </p>
-                    </div>
-                  </div>
-                  <h4 className="text-lg font-bold mb-2">Data Analyst</h4>
-                  <p className="text-sm text-slate-500 mb-6">
-                    Inspect, cleanse, and model data to discover useful
-                    information and metrics.
-                  </p>
-                  <div className="flex gap-2">
-                    <span className="w-6 h-6 flex items-center justify-center rounded bg-slate-100 dark:bg-slate-800 text-xs font-bold text-slate-600">
-                      I
-                    </span>
-                    <span className="w-6 h-6 flex items-center justify-center rounded bg-slate-100 dark:bg-slate-800 text-xs font-bold text-slate-600">
-                      S
-                    </span>
-                  </div>
-                </div>
-                <div className="border-t border-slate-100 dark:border-slate-800 p-4">
-                  <button className="w-full text-center text-sm font-bold text-blue-600 hover:text-blue-700">
-                    Explore Career
-                  </button>
-                </div>
-              </div>
+              )}
             </div>
           </section>
 

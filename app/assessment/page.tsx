@@ -65,6 +65,11 @@ export default function Assessment() {
           selectedOptionIndex: optionIndex,
         }),
       });
+
+      // MOVE TO NEXT QUESTION AUTOMATICALLY
+      if (currentIndex < questions.length - 1) {
+        setCurrentIndex((prev) => prev + 1);
+      }
     } catch (error) {
       console.error("Failed to save answer:", error);
     }
@@ -75,7 +80,7 @@ export default function Assessment() {
     if (currentIndex < questions.length - 1) {
       setCurrentIndex((prev) => prev + 1);
     } else {
-      // 🔥 Submit at last question
+      // Submit at last question
       try {
         await fetch(`/api/student/v1/assessments/submit`, {
           method: "POST",

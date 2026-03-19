@@ -160,5 +160,9 @@ export async function calculateResult(attemptId: string) {
 export async function getResult(attemptId: string) {
   await connectDB();
 
-  return ResultModel.findOne({ attemptId }).populate("careers");
+  const result = await ResultModel.findOne({ attemptId }).populate("careers");
+
+  if (!result) throw new Error("Result not found");
+
+  return result;
 }
