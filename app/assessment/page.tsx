@@ -82,7 +82,7 @@ export default function Assessment() {
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ attemptId }),
         });
-        window.location.href = `/result/${attemptId}`;
+        window.location.href = `dashboard/result/${attemptId}`;
       } catch (error) {
         console.error("Failed to submit assessment:", error);
       }
@@ -119,7 +119,7 @@ export default function Assessment() {
                 <LineChart className="w-5 h-5" />
               </div>
               <span className="text-xl font-bold tracking-tight text-slate-900 dark:text-white">
-                CareerGuide
+                CareerPath
               </span>
             </Link>
 

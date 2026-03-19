@@ -11,7 +11,7 @@ export default function Footer() {
             <div className="flex items-center gap-2 mb-6">
               <Users className="text-primary w-8 h-8" />
               <span className="text-xl font-bold tracking-tight text-slate-900 dark:text-white">
-                CareerGuide
+                CareerPath
               </span>
             </div>
             <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed mb-6">
@@ -122,7 +122,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="border-t border-slate-200 dark:border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-500 dark:text-slate-400">
-          <p>© 2024 CareerGuide Platform. All rights reserved.</p>
+          <p>© 2024 CareerPath Platform. All rights reserved.</p>
           <div className="flex items-center gap-6">
             <span>English (US)</span>
             <ThemeSwitcher />
