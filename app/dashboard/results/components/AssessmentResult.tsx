@@ -20,7 +20,11 @@ import {
   CheckCircle2,
 } from "lucide-react";
 
-export default function AssessmentResult() {
+type Props = {
+  id: string;
+};
+
+export default function AssessmentResult({ id }: Props) {
   return (
     <div className="flex min-h-screen bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 font-sans">
       {/* Sidebar */}
