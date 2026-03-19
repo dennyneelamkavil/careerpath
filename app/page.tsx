@@ -46,7 +46,7 @@ export default function Home() {
                   Take Free Assessment
                 </Link>
                 <Link
-                  href="/dashboard"
+                  href="/careers"
                   className="px-8 py-4 bg-slate-200 dark:bg-slate-800 text-slate-900 dark:text-white font-bold rounded-xl text-lg hover:bg-slate-300 dark:hover:bg-slate-700 transition-colors text-center"
                 >
                   Explore Careers
